@@ -2,16 +2,16 @@ import React from 'react';
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 
-const  Profile = () => {
+const Profile = () => {
     return (
-        <div className={classes.content}>
+        <div>
             <div>
-                <img src='https://i.imgur.com/UehVKrn.png' alt=''/> 
+                <img src='https://i.imgur.com/UehVKrn.png' alt='' />
             </div>
             <div>
-            ava + info
+                ava + info
             </div>
-            <MyPosts />       
+            <MyPosts />
         </div>
     );
 }
