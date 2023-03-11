@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
 
-const Profile = () => {
+export default function Profile() {
     return (
         <div>
             <div>
@@ -15,5 +15,3 @@ const Profile = () => {
         </div>
     );
 }
-
-export default Profile;

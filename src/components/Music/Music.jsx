@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Music = (props) => {
+export default function Music(props) {
     return (
         <div>
             Music
         </div>
     );
 }
-
-export default Music;

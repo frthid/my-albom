@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
+export default function MyPosts() {
     return (
         <div>
             My post
@@ -19,5 +19,3 @@ const MyPosts = () => {
         </div>
     );
 }
-
-export default MyPosts;

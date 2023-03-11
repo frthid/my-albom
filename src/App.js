@@ -9,7 +9,7 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 
-const App = () => {
+export default function App() {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -29,4 +29,4 @@ const App = () => {
     );
 }
 
-export default App;  
+
