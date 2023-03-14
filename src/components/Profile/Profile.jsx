@@ -9,7 +9,7 @@ export default function Profile() {
                 <img src='https://i.imgur.com/UehVKrn.png' alt='' />
             </div>
             <div>
-                ava + info
+                ava - info
             </div>
             <MyPosts />
         </div>
