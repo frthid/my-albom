@@ -12,26 +12,39 @@ function DialogItem({ name, id }) {
     );
 }
 
-function Message({message}) {
+function Message({ message }) {
     return (
         <div className={classes.message}>{message}</div>
     );
 }
 
 export default function Dialogs(props) {
+
+    let dialogs = [
+        { id: 1, name: 'Dimon' },
+        { id: 2, name: 'Atrem' },
+        { id: 3, name: 'Nikita' },
+        { id: 4, name: 'Churka' },
+        { id: 5, name: 'Nigger' }
+    ];
+
+    let messages = [
+        { id: 1, message: 'I hate niggers' },
+        { id: 2, message: 'I am too' },
+        { id: 3, message: 'Cool!' }
+    ];
+
+    let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+
+    let messegesElements = messages.map(m => <Message message={m.message} id={m.id} />);
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsList}>
-                <DialogItem name='Dimon' id='1' />
-                <DialogItem name='Atrem' id='2' />
-                <DialogItem name='Nikita' id='3' />
-                <DialogItem name='Churka' id='4' />
-                <DialogItem name='Nigger' id='5' />
+                {dialogsElements}
             </div>
             <div className={classes.messages}>
-                <Message message='I hate niggers'/>
-                <Message message='I am too'/>
-                <Message message='Cool!'/>
+                {messegesElements}
             </div>
         </div>
     );
