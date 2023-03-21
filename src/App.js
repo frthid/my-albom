@@ -9,7 +9,7 @@ import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 
-export default function App() {
+export default function App({ state }) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -17,8 +17,10 @@ export default function App() {
                 <Navbar />
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/profile' element={<Profile />} />
-                        <Route path='/dialogs/*' element={<Dialogs />} />
+                        <Route path='/profile'
+                            element={<Profile state={state.profilePage} />} />
+                        <Route path='/dialogs/*'
+                            element={<Dialogs state={state.dialogsPage} />} />
                         <Route path='/news' element={<News />} />
                         <Route path='/music' element={<Music />} />
                         <Route path='/settings' element={<Settings />} />

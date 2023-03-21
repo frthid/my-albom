@@ -2,12 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 
-export default function MyPosts() {
-
-    let posts = [
-        { id: 1, message: 'Hi', likesCount: 0 },
-        { id: 2, message: 'I am chehenets', likesCount: 666 }
-    ];
+export default function MyPosts({ posts }) {
 
     let postsElements = posts.map(p => <Post message={p.message} likesCount={p.likesCount} />);
 
