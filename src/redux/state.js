@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST'; 
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
     _state: {
@@ -22,7 +24,8 @@ let store = {
                 { id: 1, message: 'I hate niggers' },
                 { id: 2, message: 'I am too' },
                 { id: 3, message: 'Cool!' }
-            ]
+            ],
+            newMessageText: ''
         }
     },
     _callSubscriber() {
@@ -49,20 +52,39 @@ let store = {
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+            this._state.dialogsPage.newMessageText = action.newMessage;
+            this._callSubscriber(this._state);
+        } else if  (action.type === SEND_MESSAGE) {
+            let newMessage = this._state.dialogsPage.newMessageText;
+            this._state.dialogsPage.newMessageText = '';
+            this._state.dialogsPage.messages.push({ id: 4, message: newMessage })
+            this._callSubscriber(this._state);
         }
     }
 };
-
+//POST
 export const addPostActionCreator = () => {
     return {
         type: ADD_POST
     };
 };
-
 export const updateNewPostTextActionCreator = (text) => {
     return {
         type : UPDATE_NEW_POST_TEXT,
         newText: text
+    };
+};
+//MESSAGE
+export const sendMessageActionCreator = () => {
+    return {
+        type: SEND_MESSAGE
+    };
+};
+export const updateNewMessageTextActionCreator = (text) => {
+    return {
+        type : UPDATE_NEW_MESSAGE_TEXT,
+        newMessage: text
     };
 };
 
